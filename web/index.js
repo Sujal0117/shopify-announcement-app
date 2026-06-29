@@ -97,8 +97,8 @@ app.get("/health", (req, res) => {
 });
 
 // ─── Serve React Frontend ─────────────────────────────────────────────────────
-// In both dev and production, serve the built client/dist folder
-const STATIC_PATH = path.join(__dirname, "../client/dist");
+// Resolve client/dist relative to this file (web/index.js → ../client/dist)
+const STATIC_PATH = path.resolve(__dirname, "../client/dist");
 app.use(serveStatic(STATIC_PATH, { index: false }));
 
 // ─── SPA Fallback ─────────────────────────────────────────────────────────────

@@ -3,8 +3,8 @@ services:
     name: shopify-announcement-app
     runtime: node
     rootDir: .
-    buildCommand: cd client && npm install && npm run build && cd ../web && npm install --legacy-peer-deps
-    startCommand: cd web && node index.js
+    buildCommand: cd web && npm install --legacy-peer-deps && cd ../client && npm install && npm run build
+    startCommand: node web/index.js
     envVars:
       - key: NODE_ENV
         value: production
