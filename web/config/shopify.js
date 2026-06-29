@@ -9,13 +9,18 @@ import "dotenv/config";
 
 const isDev = process.env.NODE_ENV !== "production";
 
+// Strip protocol from host — Shopify needs hostname only
+const hostName = (process.env.SHOPIFY_APP_URL || "localhost:3000")
+  .replace(/^https?:\/\//, "")
+  .replace(/\/$/, "");
+
 const shopify = shopifyApp({
   api: {
     apiVersion: ApiVersion.January25,
-    apiKey: process.env.SHOPIFY_API_KEY,
-    apiSecretKey: process.env.SHOPIFY_API_SECRET,
-    scopes: process.env.SCOPES?.split(","),
-    hostName: (process.env.SHOPIFY_APP_URL || "").replace(/https?:\/\//, ""),
+    apiKey: process.env.SHOPIFY_API_KEY || "",
+    apiSecretKey: process.env.SHOPIFY_API_SECRET || "",
+    scopes: (process.env.SCOPES || "write_metafields,read_metafields,read_themes").split(","),
+    hostName,
     logger: {
       level: isDev ? LogSeverity.Debug : LogSeverity.Warning,
     },
@@ -28,7 +33,7 @@ const shopify = shopifyApp({
     path: "/api/webhooks",
   },
   sessionStorage: new MongoDBSessionStorage(
-    new URL(process.env.MONGODB_URI),
+    new URL(process.env.MONGODB_URI || "mongodb://localhost:27017/shopify_announcement"),
     "shopify_announcement"
   ),
 });
