@@ -1,0 +1,19 @@
+# Learn more about configuring your app at https://shopify.dev/docs/apps/tools/cli/configuration
+
+client_id = "509d53b887a9a1bc60358b0cca31f696"
+application_url = "https://detail-pension-reroute.ngrok-free.dev"
+embedded = true
+name = "Scaffold the App"
+
+[access_scopes]
+scopes = "write_metafields,read_metafields,read_themes"
+optional_scopes = []
+use_legacy_install_flow = false
+
+[auth]
+redirect_urls = [
+  "https://detail-pension-reroute.ngrok-free.dev/api/auth/callback"
+]
+
+[webhooks]
+api_version = "2026-04"

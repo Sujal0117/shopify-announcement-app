@@ -1,0 +1,17 @@
+{
+  "name": "Announcement Banner",
+  "settings": {
+    "background_color": {
+      "label": "Background color"
+    },
+    "text_color": {
+      "label": "Text color"
+    },
+    "font_size": {
+      "label": "Font size (px)"
+    },
+    "font_weight": {
+      "label": "Font weight"
+    }
+  }
+}

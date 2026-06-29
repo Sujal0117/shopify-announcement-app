@@ -1,0 +1,33 @@
+{
+  "name": "shopify-announcement-web",
+  "version": "1.0.0",
+  "description": "Express backend for Shopify Announcement App",
+  "main": "index.js",
+  "type": "module",
+  "scripts": {
+    "dev": "node --watch index.js",
+    "start": "node index.js",
+    "build": "cd ../client && npm install && npm run build",
+    "heroku-postbuild": "cd ../client && npm install && npm run build"
+  },
+  "dependencies": {
+    "@shopify/shopify-api": "^10.0.0",
+    "@shopify/shopify-app-express": "^3.0.0",
+    "@shopify/shopify-app-session-storage-mongodb": "^3.0.0",
+    "cookie-parser": "^1.4.6",
+    "cors": "^2.8.5",
+    "dotenv": "^16.4.5",
+    "express": "^4.19.2",
+    "express-validator": "^7.1.0",
+    "mongoose": "^8.4.1",
+    "morgan": "^1.10.0",
+    "node-fetch": "^3.3.2",
+    "serve-static": "^1.15.0"
+  },
+  "devDependencies": {
+    "eslint": "^8.57.0"
+  },
+  "engines": {
+    "node": ">=18.0.0"
+  }
+}
