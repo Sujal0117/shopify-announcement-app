@@ -19,7 +19,7 @@ const shopify = shopifyApp({
     apiVersion: ApiVersion.January25,
     apiKey: process.env.SHOPIFY_API_KEY || "",
     apiSecretKey: process.env.SHOPIFY_API_SECRET || "",
-    scopes: (process.env.SCOPES || "write_metafields,read_metafields,read_themes").split(","),
+    scopes: (process.env.SCOPES || "read_themes").split(","),
     hostName,
     logger: {
       level: isDev ? LogSeverity.Debug : LogSeverity.Warning,

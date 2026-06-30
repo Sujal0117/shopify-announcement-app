@@ -6,7 +6,7 @@ embedded = true
 name = "Scaffold the App"
 
 [access_scopes]
-scopes = "write_metafields,read_metafields,read_themes"
+scopes = "read_themes"
 optional_scopes = []
 use_legacy_install_flow = false
 

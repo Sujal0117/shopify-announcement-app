@@ -16,7 +16,7 @@ services:
       - key: SHOPIFY_APP_URL
         sync: false
       - key: SCOPES
-        value: write_metafields,read_metafields,read_themes
+        value: read_themes
       - key: MONGODB_URI
         sync: false
       - key: SHOP
