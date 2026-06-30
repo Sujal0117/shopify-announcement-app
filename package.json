@@ -4,10 +4,7 @@
   "description": "Shopify Announcement App",
   "private": true,
   "scripts": {
-    "dev": "shopify app dev",
-    "build": "cd client && npm install && npm run build",
-    "start": "cd web && node index.js",
-    "install:all": "cd web && npm install --legacy-peer-deps && cd ../client && npm install"
+    "dev": "shopify app dev"
   },
   "engines": {
     "node": ">=18.0.0"

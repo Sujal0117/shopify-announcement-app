@@ -5,10 +5,10 @@
   "main": "index.js",
   "type": "module",
   "scripts": {
-    "dev": "node --watch index.js",
+    "dev": "shopify app dev",
+    "build": "cd client && npm install && npm run build",
     "start": "node index.js",
-    "build": "cd ../client && npm install && npm run build",
-    "heroku-postbuild": "cd ../client && npm install && npm run build"
+    "install:all": "npm install --legacy-peer-deps && cd ../client && npm install"
   },
   "dependencies": {
     "@shopify/shopify-api": "^10.0.0",
